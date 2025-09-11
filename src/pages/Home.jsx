@@ -12,16 +12,24 @@ import instagramLogo from '../assets/instagram.svg';
 
 import communityLogo from '../assets/communityLogo.svg';
 
+import { Link, useNavigate } from 'react-router-dom';
+
 const navLinks = [
-  { name: "Home", href: "#" },
+  { name: "Home", href: "/" },
   { name: "About", href: "#about" },
-  { name: "Innovation", href: "#innovation" },
+  { name: "Innovation", href: "/innovation" },
   { name: "Guide", href: "#guide" },
-  { name: "Community", href: "#community" },
-  { name: "Contact", href: "#contact" },
+  { name: "Community", href: "/community" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleJoinNow = () => {
+    navigate('/login');
+  };
+
   return (
     <div style={{ fontFamily: 'Montserrat', background: '#f9fafb', minHeight: '100vh' }}>
       {/* Navbar */}
@@ -33,9 +41,9 @@ const Home = () => {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
             {navLinks.map(link => (
-              <a key={link.name} href={link.href} style={{ color: link.name === 'Home' ? '#e6ffb3' : '#fff', fontWeight: 500, fontSize: 16, textDecoration: 'none', position: 'relative' }}>{link.name}</a>
+              <Link key={link.name} to={link.href} style={{ color: link.name === 'Home' ? '#e6ffb3' : '#fff', fontWeight: 500, fontSize: 16, textDecoration: 'none', position: 'relative' }}>{link.name}</Link>
             ))}
-            <button style={{ marginLeft: 24, background: '#607C3C', color: '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1.5rem', fontWeight: 500, fontSize: 16, cursor: 'pointer' }}>Join Now</button>
+            <button onClick={handleJoinNow} style={{ marginLeft: 24, background: '#607C3C', color: '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1.5rem', fontWeight: 500, fontSize: 16, cursor: 'pointer' }}>Join Now</button>
           </div>
         </div>
       </nav>
