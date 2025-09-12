@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../App";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
     // Simulasi login sukses
-    navigate('/home');
+    login(); // Set isLoggedIn to true
+    navigate('/'); // Kembali ke halaman home
   };
 
   return (

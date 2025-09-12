@@ -51,8 +51,10 @@ const Innovation = () => {
             {navLinks.map(link => (
               <Link key={link.name} to={link.href} style={{ color: link.name === 'Innovation' ? '#607C3C' : '#333', fontWeight: 600, fontSize: 16, textDecoration: 'none' }}>{link.name}</Link>
             ))}
+            <Link to="/profile">
+              <img src={supenoSurja} alt="User Avatar" style={{ height: 40, width: 40, borderRadius: '50%' }} />
+            </Link>
           </div>
-          <img src={supenoSurja} alt="User Avatar" style={{ height: 40, borderRadius: '50%' }} />
         </div>
       </nav>
 

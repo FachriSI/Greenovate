@@ -1,9 +1,10 @@
 import ethanWario from '../assets/ethano.png';
-import React from "react";
+import React, { useContext, useRef, useState } from "react";
 import backgroundForest from '../assets/backgroundForest.jpg';
 import aboutUsImg from '../assets/aboutUs.png';
 import innovationsLogo from '../assets/innovationsLogo.svg';
 import guidesLogo from '../assets/guidesLogo.svg';
+import greenVideo from '../assets/greenVideo.mp4';
 
 import supenoSurja from '../assets/supeno.jpg';
 import delimaSilalahi from '../assets/delima.jpg';
@@ -13,6 +14,7 @@ import instagramLogo from '../assets/instagram.svg';
 import communityLogo from '../assets/communityLogo.svg';
 
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../App';
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -25,9 +27,23 @@ const navLinks = [
 
 const Home = () => {
   const navigate = useNavigate();
+  const { isLoggedIn, logout } = useContext(AuthContext);
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleJoinNow = () => {
     navigate('/login');
+  };
+  
+  const toggleVideo = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
   };
 
   return (
@@ -43,7 +59,18 @@ const Home = () => {
             {navLinks.map(link => (
               <Link key={link.name} to={link.href} style={{ color: link.name === 'Home' ? '#e6ffb3' : '#fff', fontWeight: 500, fontSize: 16, textDecoration: 'none', position: 'relative' }}>{link.name}</Link>
             ))}
-            <button onClick={handleJoinNow} style={{ marginLeft: 24, background: '#607C3C', color: '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1.5rem', fontWeight: 500, fontSize: 16, cursor: 'pointer' }}>Join Now</button>
+            {isLoggedIn ? (
+              <Link to="/profile">
+                <img 
+                  src={supenoSurja} 
+                  alt="User Avatar" 
+                  style={{ height: 40, width: 40, borderRadius: '50%', cursor: 'pointer' }} 
+                  title="Lihat profil"
+                />
+              </Link>
+            ) : (
+              <button onClick={handleJoinNow} style={{ marginLeft: 24, background: '#607C3C', color: '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1.5rem', fontWeight: 500, fontSize: 16, cursor: 'pointer' }}>Join Now</button>
+            )}
           </div>
         </div>
       </nav>
@@ -61,13 +88,39 @@ const Home = () => {
       {/* Video Section */}
       <section style={{ width: '100%', background: '#f9fafb', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '3rem 0' }}>
         <div style={{ maxWidth: 900, width: '100%', borderRadius: 16, overflow: 'hidden', boxShadow: '0 2px 16px rgba(0,0,0,0.07)', background: '#fff', position: 'relative' }}>
-          <img src="/green-building.jpg" alt="Video Preview" style={{ width: '100%', height: 'auto', display: 'block' }} />
-          <button style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: 70, height: 70, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}>
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="18" r="18" fill="#607C3C"/>
-              <polygon points="14,12 26,18 14,24" fill="#fff" />
-            </svg>
-          </button>
+          <video 
+            ref={videoRef}
+            src={greenVideo} 
+            style={{ width: '100%', height: 'auto', display: 'block' }} 
+            controls={isPlaying}
+            preload="metadata"
+          />
+          {!isPlaying && (
+            <button 
+              onClick={toggleVideo}
+              style={{ 
+                position: 'absolute', 
+                top: '50%', 
+                left: '50%', 
+                transform: 'translate(-50%, -50%)', 
+                background: 'rgba(255,255,255,0.85)', 
+                border: 'none', 
+                borderRadius: '50%', 
+                width: 70, 
+                height: 70, 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                cursor: 'pointer', 
+                boxShadow: '0 2px 8px rgba(0,0,0,0.12)' 
+              }}
+            >
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="18" fill="#607C3C"/>
+                <polygon points="14,12 26,18 14,24" fill="#fff" />
+              </svg>
+            </button>
+          )}
         </div>
       </section>
 

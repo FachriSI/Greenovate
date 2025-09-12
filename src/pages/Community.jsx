@@ -103,7 +103,9 @@ const Community = () => {
                         {navLinks.map(link => (
                             <Link key={link.name} to={link.href} style={{ color: link.name === 'Community' ? '#607C3C' : '#000', fontWeight: 500, fontSize: 16, textDecoration: 'none' }}>{link.name}</Link>
                         ))}
-                        <img src={supenoSurja} alt="User Avatar" style={{ height: 40, width: 40, borderRadius: '50%' }} />
+                        <Link to="/profile">
+                            <img src={supenoSurja} alt="User Avatar" style={{ height: 40, width: 40, borderRadius: '50%' }} />
+                        </Link>
                     </div>
                 </div>
             </nav>
