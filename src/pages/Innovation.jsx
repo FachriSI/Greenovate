@@ -17,9 +17,9 @@ import cycleImage from '../assets/innovation/cycle.jpg';
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
+  { name: "About", href: "/about" },
   { name: "Innovation", href: "/innovation" },
-  { name: "Guide", href: "/#guide" },
+  { name: "Guide", href: "/guide" },
   { name: "Community", href: "/community" },
   { name: "Contact", href: "/contact" },
 ];

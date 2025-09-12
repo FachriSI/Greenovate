@@ -1,0 +1,360 @@
+img{
+  width: 100px;
+}
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.about-hero h1 {
+  color: #2e7d32;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.why-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.why-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c5530;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reasons-grid img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reason-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reason-card h3 {
+  color: #2c5530;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.reason-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.reasons-grid > *:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.reasons-grid > *:nth-child(2) {
+  grid-column: 2 / 5;
+  grid-row: 1 / 2;
+}
+
+.reasons-grid > *:nth-child(3) {
+  grid-column: 3 / 5;
+  grid-row: 2 / 3;
+}
+
+.reasons-grid > *:nth-child(4) {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+
+.reasons-grid > *:nth-child(5) {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.reasons-grid > *:nth-child(6) {
+  grid-column: 2 / 5;
+  grid-row: 3 / 4;
+}
+       
+.timeline-section {
+    margin-bottom: 3rem;
+}
+        
+.timeline-section h2 {
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+    }
+      
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+        
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 10;
+    width: 5px;
+    height: 70%;
+    background-color: #2e7d32;
+    border-radius: 3px;
+}
+        
+.timeline-item {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+        
+.timeline-year {
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 0 0 6px #f8f9fa;
+}
+        
+.timeline-content {
+    background-color: #fff;
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-left: 90px;
+    position: relative;
+    width: calc(100% - 90px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+        
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    }
+        
+.timeline-content h3 {
+    color: #2e7d32;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+        }
+        
+.timeline-content p {
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.2rem;
+}
+
+
+.vision-and-mission {
+  padding: 80px 20px;
+  background-color: #f1f8f1;
+  position: relative;
+}
+
+.vm-container {
+  max-width: 120px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.vision-mision {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.vision-mision h2 {
+  grid-column: 1 / -1;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2c5530;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.vision-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.vision-mision img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.vision-mision h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c5530;
+  margin: 0 0 20px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.vision-and-mission {
+  padding: 60px 0;
+  background-color: #f8f8f8;
+  font-family: 'Arial', sans-serif;
+}
+
+.vm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vision-mision {
+  text-align: center;
+}
+
+.vision-mision h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.vision-mision img {
+  display: block;
+  margin: 30px auto;
+  max-width: 400px;
+  height: auto;
+}
+
+.vision-mision h4 {
+  font-size: 24px;
+  color: #27ae60;
+  margin: 25px 0 15px;
+  font-weight: 600;
+}
+
+.vision-mision p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #34495e;
+  margin-bottom: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collaborations {
+  padding: 70px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.collaborations > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.collaborations h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  position: relative;
+}
+
+.collaborations img {
+  margin: 0 40px;
+  height: 80px; 
+  width: auto;
+  max-width: 200px;
+  transition: all 0.3s ease;
+  filter: grayscale(30%);
+}
+

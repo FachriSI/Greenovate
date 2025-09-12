@@ -8,6 +8,8 @@ import { useState, useEffect, createContext } from 'react';
 import Innovation from './pages/Innovation';
 import Contact from './pages/Contact';
 import Profile from './pages/Profile';
+import About from './pages/About';
+import Guide from './pages/Guide';
 
 import InnovationDetail from './pages/InnovationDetail';
 
@@ -51,6 +53,8 @@ function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/guide" element={<Guide />} />
         </Routes>
       </Router>
     </AuthContext.Provider>

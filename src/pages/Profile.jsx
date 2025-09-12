@@ -6,9 +6,9 @@ import { AuthContext } from '../App';
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
+  { name: "About", href: "/about" },
   { name: "Innovation", href: "/innovation" },
-  { name: "Guide", href: "/#guide" },
+  { name: "Guide", href: "/guide" },
   { name: "Community", href: "/community" },
   { name: "Contact", href: "/contact" },
 ];
@@ -24,7 +24,7 @@ const profileActivities = [
     type: "Read Guide",
     title: "How to Reduce Carbon",
     description: "Read the guide '10 Ways to Reduce Your Carbon Footprint at Home' in the Tips & Guides page to discover practical eco-friendly actions.",
-    link: "/#guide"
+    link: "/guide"
   },
   {
     type: "Sent Feedback",
