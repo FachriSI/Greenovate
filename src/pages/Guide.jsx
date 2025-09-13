@@ -73,9 +73,11 @@ const Guide = () => {
             <div className="card-content">
               <h3>10 Ways to Reduce Your Carbon Footprint at Home</h3>
               <p>Simple steps to reduce your carbon footprint and how to do it.</p>
-              <button className="read-more-btn">
-                Read More
-              </button>
+              <Link to="/guide/10-ways-reduce-carbon">
+                <button className="read-more-btn">
+                  Read More
+                </button>
+              </Link>
             </div>
           </div>
           

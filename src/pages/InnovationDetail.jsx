@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import instagramLogo from '../assets/instagram.svg';
 import solarImage from '../assets/innovation/solar.png';
 import aisolaImage from '../assets/innovation/aisola.jpg';
 import driveImage from '../assets/innovation/drive.jpg';
-
+import supenoSurja from '../assets/supeno.jpg';
+import { AuthContext } from '../App';
 
 const innovationData = {
   id: 1,
@@ -23,31 +24,38 @@ const relatedInnovations = [
 
 const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/#about" },
+    { name: "About", href: "/about" },
     { name: "Innovation", href: "/innovation" },
-    { name: "Guide", href: "/#guide" },
-    { name: "Community", href: "/#community" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Guide", href: "/guide" },
+    { name: "Community", href: "/community" },
+    { name: "Contact", href: "/contact" },
 ];
 
 const InnovationDetail = () => {
+  const { isLoggedIn } = useContext(AuthContext);
 
 
   return (
     <div style={{ fontFamily: 'Montserrat', background: '#fff', color: '#333' }}>
       {/* Navbar */}
-      <nav style={{ background: '#fff', padding: '1.5rem 0', borderBottom: '1px solid #eee' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 2rem' }}>
+      <nav style={{ background: '#fff', padding: '1rem 0', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <img src="/Logo.svg" alt="Greenovate Logo" style={{ height: 40 }} />
-            <span style={{ fontWeight: 700, fontSize: 22, color: '#607C3C', letterSpacing: 1 }}>GREENOVATE</span>
+            <span style={{ fontWeight: 700, fontSize: 22, color: '#000' }}>GREENOVATE</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
             {navLinks.map(link => (
-              <Link key={link.name} to={link.href} style={{ color: link.name === 'Innovation' ? '#607C3C' : '#333', fontWeight: 600, fontSize: 16, textDecoration: 'none' }}>{link.name}</Link>
+              <Link key={link.name} to={link.href} style={{ color: link.name === 'Innovation' ? '#607C3C' : '#000', fontWeight: 500, fontSize: 16, textDecoration: 'none' }}>{link.name}</Link>
             ))}
+            <Link to={isLoggedIn ? "/profile" : "/login"}>
+              <img 
+                src={isLoggedIn ? supenoSurja : '/Logo-greenovate.png'} 
+                alt={isLoggedIn ? "Profile" : "Login"} 
+                style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover' }} 
+              />
+            </Link>
           </div>
-          <img src="https://i.pravatar.cc/40?img=1" alt="User Avatar" style={{ height: 40, borderRadius: '50%' }} />
         </div>
       </nav>
 

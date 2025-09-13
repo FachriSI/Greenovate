@@ -35,6 +35,11 @@ const Home = () => {
     navigate('/login');
   };
   
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    alert('Thank you for subscribing to our newsletter! You will receive updates soon.');
+  };
+  
   const toggleVideo = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -81,7 +86,12 @@ const Home = () => {
         <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', width: '100%' }}>
           <h1 style={{ color: '#fff', fontSize: 48, fontWeight: 700, marginBottom: 16, letterSpacing: 1 }}>LEARN TODAY, SUSTAIN TOMORROW</h1>
           <p style={{ color: '#fff', fontSize: 20, fontWeight: 400, marginBottom: 32 }}>Empowering you to learn, connect and act sustainably for a greener future</p>
-          <button style={{ background: '#fff', color: '#607C3C', border: 'none', borderRadius: 8, padding: '0.75rem 2.5rem', fontWeight: 600, fontSize: 18, cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>Explore Innovations</button>
+          <button 
+            onClick={() => navigate('/innovation')}
+            style={{ background: '#fff', color: '#607C3C', border: 'none', borderRadius: 8, padding: '0.75rem 2.5rem', fontWeight: 600, fontSize: 18, cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
+          >
+            Explore Innovations
+          </button>
         </div>
       </section>
 
@@ -133,7 +143,12 @@ const Home = () => {
               Greenovate is a digital education platform dedicated to fostering green innovation.<br />
               We empower individuals to learn, connect, and take sustainable actions, contributing to a healthier planet and a more sustainable future.
             </p>
-            <button style={{ background: '#607C3C', color: '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1.5rem', fontWeight: 500, fontSize: 16, cursor: 'pointer' }}>View More</button>
+            <button 
+              onClick={() => navigate('/about')}
+              style={{ background: '#607C3C', color: '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1.5rem', fontWeight: 500, fontSize: 16, cursor: 'pointer' }}
+            >
+              View More
+            </button>
           </div>
           <div style={{ flex: 1, minWidth: 280, display: 'flex', justifyContent: 'center' }}>
             <div
@@ -245,6 +260,7 @@ const Home = () => {
               }}
             />
             <button
+              onClick={handleSubscribe}
               type="submit"
               style={{
                 background: '#607C3C',

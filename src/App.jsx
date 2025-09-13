@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import Profile from './pages/Profile';
 import About from './pages/About';
 import Guide from './pages/Guide';
+import ArticleGuide from './pages/articleGuide';
 
 import InnovationDetail from './pages/InnovationDetail';
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
           <Route path="/guide" element={<Guide />} />
+          <Route path="/guide/10-ways-reduce-carbon" element={<ArticleGuide />} />
         </Routes>
       </Router>
     </AuthContext.Provider>
