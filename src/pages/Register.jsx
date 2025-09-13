@@ -97,12 +97,12 @@ const Register = () => {
       </div>
 
       {/* Right side - Background Image */}
-      <div className="hidden lg:block w-1/2">
-        <img 
-          src="/green-building.jpg" 
-          alt="Green Building" 
-          className="h-full w-full object-cover"
-        />
+      <div className="hidden lg:block w-1/2 h-screen bg-cover bg-center"
+           style={{ 
+             backgroundImage: "url('/green-building.jpg')",
+             backgroundSize: "cover",
+             backgroundPosition: "center"
+           }}>
       </div>
     </div>
   );

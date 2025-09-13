@@ -14,9 +14,9 @@ const Login = () => {
   };
 
   return (
-    <div className="h-screen flex flex-row">
+    <div className="h-screen flex flex-row relative overflow-hidden">
       {/* Form container - Left side */}
-      <div className="flex flex-col justify-center w-full lg:w-1/2 bg-white px-8 py-12 lg:px-14 lg:py-10" style={{ fontFamily: 'Montserrat' }}>
+      <div className="flex flex-col justify-center w-full lg:w-1/2 bg-white px-8 py-12 lg:px-14 lg:py-10 z-10" style={{ fontFamily: 'Montserrat' }}>
         {/* Logo and Brand */}
         <div className="mb-10">
           <div className="flex items-center gap-3">
@@ -68,18 +68,18 @@ const Login = () => {
         </form>
         <div className="mt-6 text-center text-sm" style={{ fontWeight: 500, fontStyle: 'normal', lineHeight: 'normal', color: '#000' }}>
           Don't have an account?{' '}
-          <Link to="/" className="font-medium hover:underline" style={{ color: '#607C3C', fontWeight: 500, fontStyle: 'normal', lineHeight: 'normal' }}>
+          <Link to="/register" className="font-medium hover:underline" style={{ color: '#607C3C', fontWeight: 500, fontStyle: 'normal', lineHeight: 'normal' }}>
             Register here
           </Link>
         </div>
       </div>
-      {/* Right side - Background Image */}
-      <div className="hidden lg:block w-1/2">
-        <img 
-          src="/green-building.jpg" 
-          alt="Green Building" 
-          className="h-full w-full object-cover"
-        />
+      {/* Right side with the green building image */}
+      <div className="hidden lg:block lg:w-1/2 bg-cover bg-center" 
+           style={{ 
+             backgroundImage: "url('/green-building.jpg')",
+             backgroundSize: "cover",
+             backgroundPosition: "center"
+           }}>
       </div>
     </div>
   );
